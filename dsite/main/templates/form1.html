@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<h1>Request Method : {{method}}</h1>
+	<form method="post">
+	  {% csrf_token %}
+	  First name:<br>
+	  <input type="text" name="firstname"><br>
+	  Last name:<br>
+	  <input type="text" name="lastname"><br>
+	  Gender:<br>
+	  <input type="radio" name="gender" value="male" checked> Male<br>
+	  <input type="radio" name="gender" value="female"> Female<br>
+	  E-mail:<br>
+	  <input type="text" name="email"><br>
+	  City:<br>
+	  <select name="city">
+			<option>Delhi</option>
+			<option>Bangalore</option>
+			<option>Hyderabad</option>
+			<option>Chennai</option>
+			<option>Ahmedabad</option>
+			<option>Kolkata</option>
+	   </select>
+	   <br><br>
+	   <input type="submit"><br><br><br>
+	<form>
+</body>
+</html>

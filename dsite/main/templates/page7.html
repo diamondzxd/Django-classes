@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>Using for Loop in Templates</h1>
+
+	<h3>Skills as UL</h3>
+	<ul>
+		{% for skill in skills %}
+		<li>{{skill}}</li>
+		{% endfor %}
+	</ul>
+
+	<h3>Skills as Dropdown List</h3>
+	<select>
+		{% for skill in skills %}
+		<option>{{skill}}</option>
+		{% endfor %}
+	</select>
+</body>
+</html>

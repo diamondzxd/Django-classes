@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block 'title' %}{% endblock %}</title>
+
+	<style>
+		#header
+		{
+			height:50px;
+			background-color:red;
+		}
+
+		#banner
+		{
+			height:150px;
+			background-color:yellow;
+		}
+
+		#menu
+		{
+			height:50px;
+			background-color:orange;
+		}
+
+		#content
+		{
+			height:600px;
+			background-color:green;
+		}
+
+		#footer
+		{
+			height:75px;
+			background-color:blue
+		}
+	</style>
+</head>
+<body>
+	<div id="header">
+	</div>
+	<div id="banner">
+	</div>
+	<div id="menu">
+	</div>
+	<div id="content">
+		{% block 'content' %}
+		{% endblock %}
+	</div>
+	<div id="footer">
+	</div>
+</body>
+</html>

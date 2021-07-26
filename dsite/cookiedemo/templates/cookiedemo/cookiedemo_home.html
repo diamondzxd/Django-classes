@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<a href="#">Home</a>{% if login %} | <a href="#">Account</a>{% endif %} | <a href="#">Contact</a> 
+	{% if login %}
+	<div>
+		<h3>Welcome User! | <a href="/cookiedemo/cookiedemo_logout">Logout</a></h3>
+	</div>
+	{% else %}
+	<div>
+		<h3>User Need to Register</h3>
+	</div>
+	{% endif %}
+
+	<h1>Home Page</h1>
+</body>
+</html>

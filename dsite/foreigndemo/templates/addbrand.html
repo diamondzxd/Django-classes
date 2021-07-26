@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h2>Adding a Brand</h2>
+<form method="post" enctype="multipart/form-data">
+	<table>
+		{% csrf_token %}
+		<tr>
+			<th>Name</th>
+			<th>Logo</th>
+		</tr>
+		<tr>
+			<td>{{f.name}}</td>
+			<td>{{f.logo}}</td>
+		</tr>
+	</table><br><br>
+	<input type="submit" name="submit">
+</form>
+</body>
+</html>

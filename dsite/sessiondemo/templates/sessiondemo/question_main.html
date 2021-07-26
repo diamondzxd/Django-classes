@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<form method='post'>
+		{%csrf_token%}
+		<h1>Q. {{qno}} {{question}}</h1>
+
+		{% for opt in option %}
+		<input type="radio" name="answer"> {{opt}} <br>
+		{% endfor %}
+	
+		{% if qno == 1 %}
+			<input type="submit" name="command" value="Next">
+		{% elif qno == total %}
+			<input type="submit" name="command" value="Previous">
+			<input type="submit" name="command" value="Finish">
+		{% else %}
+			<input type="submit" name="command" value="Previous">
+			<input type="submit" name="command" value="Next">		
+		{% endif %}
+	</form>
+
+</body>
+</html>

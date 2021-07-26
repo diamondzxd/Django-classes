@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		form ul
+		{
+			list-style-position: inside;
+			margin:0px;
+			padding:0px;
+		}
+		form li
+		{
+			list-style: none;
+			float: left;
+			margin:0px;
+			padding:0px;
+		}
+
+		#alert
+		{
+			position: absolute;
+			top:10px;
+			right:10px;
+			background-color:green;
+			padding:10px;
+			border:1px solid black;
+			color:white;
+		}
+
+		.success
+		{
+			background-color:green;
+		}
+
+		.error{
+			background-color:red;
+		}
+	</style>
+</head>
+<body>
+<h1>Adding A Product</h1>
+
+	{% if success %}
+	<div id="alert" class="success">
+		<span>Record Saved Successfully</span>
+	</div>
+	{% endif %}
+	{% if error %}
+	<div id="alert" class="error">
+		<span>{{error}}</span>
+	</div>
+	{% endif %}
+
+
+
+	<form method="post">
+		{% csrf_token %}
+		<table border="1">
+			<tr>
+				<td>Category</td>
+				<td>
+					{{ f.category }}
+				</td>
+			<tr>
+				<td>Brand</td>
+				<td>
+					{{ f.brand }}
+				</td>
+			</tr>
+			<tr>
+				<td>Name</td>
+				<td>{{ f.name }}</td>
+			</tr>
+			<tr>
+				<td>Price</td>
+				<td>{{ f.price }}</td>
+			</tr>
+			<tr>
+				<td>Stock</td>
+				<td>{{ f.stock }}</td>
+			</tr>
+			
+			</table>
+		<br>
+		<input type="submit">
+	</form>
+</body>
+</html>

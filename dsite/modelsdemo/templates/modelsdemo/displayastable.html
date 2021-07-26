@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>Id</th>
+			<th>Name</th>
+			<th>Course</th>
+			<th>Fees</th>
+		</tr>
+		{% for s in students %}
+		<tr>
+			<td>{{s.id}}</td>
+			<td>{{s.name}}</td>
+			<td>{{s.course}}</td>
+			<td>{{s.fees}}</td>
+		</tr>
+		{% endfor %}
+	</table>
+</body>
+</html>

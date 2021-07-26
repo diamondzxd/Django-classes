@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		.record{
+			width:180px;
+			height:140px;
+			padding:20px;
+			border:1px solid black;
+			float:left;
+			margin:10px;
+		}
+
+		.label{
+			display: inline-block;
+			width:50px;
+			font-weight: 900;
+		}
+
+		.data{
+			display: inline-block;
+			width:100px;
+			text-align: right;
+		}
+	</style>
+</head>
+<body>
+		<input type="button" value="Refresh" onclick="location.reload();">
+
+		<div>
+		{% for s in students %}
+		<div class="record">
+			<span class="label">Id</span> : <span class="data">{{s.id}}</span>
+			<br>
+			<span class="label">Name</span> : <span class="data">{{s.name}}</span>
+			<br>
+			<span class="label">Gender</span> : <span class="data">{{s.gender}}</span>
+			<br>
+			<span class="label">Age</span> : <span class="data">{{s.age}}</span>
+			<br>
+			<span class="label">City</span> : <span class="data">{{s.city}}</span>
+			<br>
+			<br>
+			<a href="/modelsdemo/deleteform2/{{s.id}}">Delete</a> | <a href="/modelsdemo/updateform2/{{s.id}}">Update</a>
+		</div>
+		{% endfor %}
+	</div>
+</body>
+</html>

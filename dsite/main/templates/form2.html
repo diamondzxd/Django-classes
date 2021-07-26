@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	{% if method == 'GET'  %}
+
+	{% if errors %}
+		<h1>Please Correct Following Errors</h1>
+		<ul>
+		{% for key,value in errors.items %}
+			<li>{{value}}</li>
+		{% endfor %}
+		</ul>
+	{% endif %}
+
+	<form method="post" novalidate>
+	  {% csrf_token %}
+	  First name:<br>
+	  <input type="text" name="firstname" required=""><br>
+	  Last name:<br>
+	  <input type="text" name="lastname" required=""><br>
+	  Gender:<br>
+	  <input type="radio" name="gender" value="male" checked> Male<br>
+	  <input type="radio" name="gender" value="female"> Female<br>
+	  E-mail:<br>
+	  <input type="text" name="email"><br>
+	  City:<br>
+	  <select name="city">
+			<option>Delhi</option>
+			<option>Bangalore</option>
+			<option>Hyderabad</option>
+			<option>Chennai</option>
+			<option>Ahmedabad</option>
+			<option>Kolkata</option>
+	   </select>
+	   <br><br>
+	   <input type="submit"> 
+	<form>
+
+	{% else %}
+
+	<h1>User Details</h1>
+	First Name : {{firstname}} <br>
+	Last Name : {{lastname}} <br>
+	Gender : {{gender}} <br>
+	Email : {{email}} <br>
+	City : {{city}} <br>
+
+	{% endif %}
+
+</body>
+</html>

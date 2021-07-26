@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		form ul
+		{
+			list-style-position: inside;
+			margin:0px;
+			padding:0px;
+		}
+		form li
+		{
+			list-style: none;
+			float: left;
+			margin:0px;
+			padding:0px;
+		}
+	</style>
+</head>
+<body>
+<h1>Custom UI</h1>
+
+	{% if f.errors %}
+	
+		{% for key,value in f.errors.items %}
+			<p><b>{{key}}</b><br>
+				{% for message in value %}
+					{{ message }} <br>
+				{% endfor %}
+			</p>
+		{% endfor %}
+	
+	{% endif %}
+
+	<form method="post" enctype="multipart/form-data" novalidate="">
+		{% csrf_token %}
+		{{ f.as_p }}
+		<input type="submit">
+	</form>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		form ul
+		{
+			list-style-position: inside;
+			margin:0px;
+			padding:0px;
+		}
+		form li
+		{
+			list-style: none;
+			float: left;
+			margin:0px;
+			padding:0px;
+		}
+	</style>
+</head>
+<body>
+<h1>Write Details to Database</h1>
+
+
+	<form method="post">
+		{% csrf_token %}
+		<table border="1">
+			<tr>
+				<td>Id</td>
+				<td>{{ f.id }}</td>
+			</tr>
+			<tr>
+				<td>Name</td>
+				<td>{{ f.name }}</td>
+			</tr>
+			<tr>
+				<td>Course</td>
+				<td>{{ f.course }}</td>
+			</tr>
+			<tr>
+				<td>Fees</td>
+				<td>{{ f.fees }}</td>
+			</tr>
+			</table>
+		<br>
+		<input type="submit">
+	</form>
+</body>
+</html>

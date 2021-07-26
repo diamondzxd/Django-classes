@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<table>
+		<th>ID</th>
+		<th>Name</th>
+		<th>Logo</th>
+
+		{% for b in brands %}
+		<tr>
+			<td>{{b.id}}</td>
+			<td>{{b.name}}</td>
+			<td><img src="/cdn/{{b.logo}}" width=200px height=150px></td>
+		</tr>
+		{% endfor %}
+	</table>
+</body>
+</html>

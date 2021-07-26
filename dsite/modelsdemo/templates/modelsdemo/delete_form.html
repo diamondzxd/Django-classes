@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		form ul
+		{
+			list-style-position: inside;
+			margin:0px;
+			padding:0px;
+		}
+		form li
+		{
+			list-style: none;
+			float: left;
+			margin:0px;
+			padding:0px;
+		}
+	</style>
+</head>
+<body>
+<h1>Enter the ID to Delete</h1>
+
+
+	<form method="post">
+		{% csrf_token %}
+		<table border="1">
+			<tr>
+				<td>Id</td>
+				<td>{{ f.id }}</td>
+			</tr>
+			</table>
+		<br>
+		<input type="submit">
+	</form>
+</body>
+</html>

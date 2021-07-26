@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<img src="{% static 'fedex.png'	%}" width="100px">
+
+	<p id="para"></p>
+
+	<script>
+
+		Download();
+		setInterval(Download,5000);
+
+		function Download()
+		{
+			xhr=new XMLHttpRequest();
+			xhr.open("GET","/ajaxdemo/basicresponse");
+			xhr.send();
+			xhr.onreadystatechange=function()
+			{
+				if(xhr.readyState==4)
+				{
+					data=xhr.responseText;
+					document.getElementById('para').innerHTML=data;
+				}
+			}
+
+			/*	
+			$.ajax("/ajaxdemo/basicresponse")
+  				.done(function(result) {
+			    	alert(result);
+			  	})
+			  	.fail(function() {
+			    	alert( "error" );
+			  	});
+			*/
+		}
+	</script>
+</body>
+</html>
